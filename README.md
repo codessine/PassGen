@@ -1,2 +1,54 @@
-# PassGen
-A terminal-based Node.js password generator. Create secure passwords by choosing length and including uppercase, lowercase, numbers, and symbols. Defaults ensure a password is always generated. Fast, customizable, and easy to use.
+╔════════════════════════════════════════════════════════╗
+║,------.                        ,----.                  ║
+║|  .--. ' ,--,--. ,---.  ,---. '  .-./    ,---. ,--,--, ║
+║|  '--' |' ,-.  |(  .-' (  .-' |  | .---.| .-. :|      \║
+║|  | --' \ '-'  |.-'  `).-'  `)'  '--'  |\   --.|  ||  |║
+║`--'      `--`--'`----' `----'  `------'  `----'`--''--'║
+╚════════════════════════════════════════════════════════╝
+
+         🔐 Password Generator - Made by Codessine
+
+**PassGen** is a lightweight, customizable password generator that runs directly in your terminal. Built with Node.js, it allows you to generate secure passwords with ease.
+
+---
+
+## Features
+
+- Set the password length (8-100 characters)  
+- Choose to include:
+  - Uppercase letters  
+  - Lowercase letters  
+  - Numbers  
+  - Symbols  
+- Default options ensure passwords are generated even if no selection is made  
+- Terminal-based 
+- Easy installation with a setup script and safe uninstall  
+
+---
+
+## Installation
+
+### Prerequisites
+
+- Node.js installed ([Download Node.js](https://nodejs.org/))
+
+### Setup
+
+Clone the repository and run the setup script:
+
+```bash
+git clone https://github.com/codessine/PassGen.git
+cd PasswordGenerator
+chmod +x install.sh uninstall.s
+sudo ./install.sh
+```
+## Uninstallation
+
+To remove PassGen from your system
+```bash
+sudo ./uninstall.sh
+```
+
+## Preview
+
+<img width="1354" height="711" alt="image" src="https://github.com/user-attachments/assets/021e9864-1e7d-4c97-a5bd-bca00e50eafb" />
