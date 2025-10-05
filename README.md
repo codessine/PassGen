@@ -34,7 +34,7 @@ Clone the repository and run the setup script:
 ```bash
 git clone https://github.com/codessine/PassGen.git
 cd PasswordGenerator
-chmod +x install.sh uninstall.s
+chmod +x install.sh uninstall.sh
 sudo ./install.sh
 ```
 ## Uninstallation
