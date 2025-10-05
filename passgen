@@ -1,0 +1,70 @@
+#!/usr/bin/env node
+
+import PromptSync from "prompt-sync";
+const prompt = PromptSync();
+
+console.log(`
+╔════════════════════════════════════════════════════════╗
+║,------.                        ,----.                  ║
+║|  .--. ' ,--,--. ,---.  ,---. '  .-./    ,---. ,--,--, ║
+║|  '--' |' ,-.  |(  .-' (  .-' |  | .---.| .-. :|      \\║
+║|  | --' \\ '-'  |.-'  \`).-'  \`)'  '--'  |\\   --.|  ||  |║
+║\`--'      \`--\`--'\`----' \`----'  \`------'  \`----'\`--''--'║
+╚════════════════════════════════════════════════════════╝
+
+         🔐 Password Generator - Made by Codessine
+`);
+
+
+let passwordLength = (prompt("Enter the desired password length (8-100): "));
+let includeUpperCase = prompt('Include upper case letters (y/n): ')?.toLowerCase() === 'n';
+let includeLowerCase = prompt('include lower case letters (y/n): ')?.toLowerCase() === 'n';
+let includeNumbers = prompt('Include numbers (y/n): ')?.toLowerCase() === 'n';
+let includeSymbols = prompt('include symbols (y/n): ')?.toLowerCase() === 'n';
+
+if (!includeLowerCase && !includeNumbers && !includeSymbols && !includeUpperCase) {
+    console.log(`No character types selected, using ALL by default`);
+
+    includeUpperCase = true;
+    includeLowerCase = true;
+    includeNumbers = true;
+    includeSymbols = true;
+}
+if (passwordLength === 0) {
+    console.log(`ERROR: password length must be a number greater than 0`);
+    process.exit(1);
+}
+if (passwordLength === null ) {
+    console.log(`ERROR: password length cannot be empty`);
+    process.exit(1);
+}
+
+function generatePassword(length, useUpper, useLower, useSymbols, useNumbers) {
+    const upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const lowerChars = "abcdefghijklmnopqrstuvwxyz";
+    const numbersChars = "123456789890";
+    const symbolsChars = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
+
+    let allChars = "";
+    if (useUpper) allChars += upperChars;
+    if (useLower) allChars += lowerChars;
+    if (useNumbers) allChars += numbersChars;
+    if (useSymbols) allChars += symbolsChars;
+
+    let password = "";
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * allChars.length);
+        password += allChars[randomIndex];
+    }
+
+    return password;
+}
+
+const generatedPassword = generatePassword(passwordLength,
+                                            includeUpperCase, 
+                                            includeLowerCase, 
+                                            includeSymbols, 
+                                            includeNumbers);
+
+console.log('');
+console.log(`Generated Password: ${generatedPassword}`);
